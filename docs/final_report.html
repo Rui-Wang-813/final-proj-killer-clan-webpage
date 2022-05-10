@@ -67,7 +67,7 @@
     </h2>
 
     <p>
-        The first part of this project is to convert a TTF font format into an SVG file, as SVG files support Bezier curves.
+        The first part of this project is to convert a TTF font format into an SVG file, as SVG files support Bézier curves.
         Therefore, the first challenge we met is to understand what TTF files are composed of, and how do we generate a specific given character into a glyph that TTF font presents.
         And here, we found a free, well-documented software called <a href="https://freetype.org/">FreeType</a>. FreeType not only has documented how to use its tool, but also provided tutorials that are detailed and vivid enough for us to understand what a font is, and what elements does a font have. Here, we learned that foundamentally a font is composed of glyphs, which can be understood as forms of characters. Each glyph has its own metrics, such as bearingX, bearingY, xMin, xMax and so on, as the diagram shown below. More information about glyph metrics can be learned <a href="https://freetype.org/freetype2/docs/tutorial/step2.html">here</a>.
 
@@ -76,20 +76,20 @@
         </div>
 
         To support mulitple characters, one essential metric we need to use is the advance. Every time we finish drawing a character, we will offset the next character by the advance value that the last character has. By doing so, every character in a line can be drawn without overlapping with each other.
-        A glyph may be made up of zero (for exmaple, a space) or multiple contours, where each contour is made up of many points. Some points make quadratic Bezier curves, and some make straight lines. Whether a point is a part of a Bezier curve, or a stright line, can be inferred from the tag interface provided by FreeType. These points in a contour are then put into a "path" element in the SVG, where a "path" can also contain multiple Bezier curves and straight lines, well fitting the "contour" concept in a TTF.
+        A glyph may be made up of zero (for exmaple, a space) or multiple contours, where each contour is made up of many points. Some points make quadratic Bézier curves, and some make straight lines. Whether a point is a part of a Bézier curve, or a stright line, can be inferred from the tag interface provided by FreeType. These points in a contour are then put into a "path" element in the SVG, where a "path" can also contain multiple Bézier curves and straight lines, well fitting the "contour" concept in a TTF.
         TTF defines that contours that need to be filled in inside must be clockwise, and contours that need to be filled in outside must be counterclockwise. But SVG will fill a contour if a pixel can to through odd number of contours to the "outside world", else will not fill, and therefore the orientation will not matter in the conversion.
         In the process of converting TTF to SVG, we found an interesting fact that, the TTF count the bottom as y = 0, while SVGs count the top as y = 0, and we therefore have to flip the y values for every point.
         <br>
         The rasterization part is rather similar to <a href="https://cs184.eecs.berkeley.edu/sp22/docs/proj1-spec">Project 1</a> in CS 184. We are also inspired by  <a href="https://cs184.eecs.berkeley.edu/sp22/docs/proj4">Project 4</a>, where we test if a point would go pass a surface by testing if "this" point and the last point are in different sides of the surface.
-        We know that a linear Bezier curve can be expressed using the follow formula:
+        We know that a linear Bézier curve can be expressed using the follow formula:
         <div align="middle">
             <img src="img/linear.png">
         </div>
-        And therefore, a quadratic Bezier curve can be expressed using:
+        And therefore, a quadratic Bézier curve can be expressed using:
         <div align="middle">
             <img src="img/quadratic.png">
         </div>
-        By rearranging the formula, we can express a quadratic Bezier curve in:
+        By rearranging the formula, we can express a quadratic Bézier curve in:
         <div align="middle">
             <img src="img/quadratic2.png">
         </div>
@@ -120,10 +120,10 @@
             <li>
                 We have learned what information the <b>.ttf</b> files hold for each font: the face of the glyph,
                 in the face, there are contour of the glyph and the contours are constituted of the points (control 
-                or non-control) of the Bezier curves and lines in the contours.
+                or non-control) of the Bézier curves and lines in the contours.
             </li>
             <li>
-                We learned how to fill a close set of Bezier curves using a fliping flag. After this project, we were
+                We learned how to fill a close set of Bézier curves using a fliping flag. After this project, we were
                 able to evaluate the boundary of an rendered 2d object and accurately fill the internal area of an object.
             </i>
             <li>
@@ -143,13 +143,13 @@
     </h2>
 
     <p>
-        First, to illustrate that the contours are made up of multiple Bezier curves and straight lines, 
+        First, to illustrate that the contours are made up of multiple Bézier curves and straight lines, 
         let us show a picture of "<b>abc</b>" rendered with only contours and points on each contour (colorful contours and points): <br>
     </p>
 
     <div align="middle">
         <img src="img/Bezier_Points.png" width="800px;">
-        <figcaption>Bezier curves and their control points are in the same color for illustrating purpose.</figcaption>
+        <figcaption>Bézier curves and their control points are in the same color for illustrating purpose.</figcaption>
     </div>
 
     <br>
