@@ -105,7 +105,7 @@
         Getting the x value given a y value for lines are way simpler, and for the purpose of conciseness, we will not show the process here. <br>
         Now, we can do the regular rasterization routine. For a y coordinate on the screen, we move from x = 0 to x = WIDTH - 1, calculating how many contours we are will be passing from x - 1 to x (or if we are using supersampling, the 1s can be other values). If we are going pass odd number of contours in this move, we will flip the fill flag, which indicates whether we will fill this pixel or not:
         <div align="middle">
-            <img src="img/flip.jpg" width="800;">
+            <img src="img/flip.png" width="800;">
         </div>
         But simply drawing the contours does not need the complex procedures above. Using de Casteljau's algorithm, we iterate from t = 0 to 1, and fill every pixels that covers the resulting coordinate. We automatically choose a step so that no two consecutive pixels can be away from the others with a distance more than sqrt(2) (distance for diagonal pixels).
         <br>
