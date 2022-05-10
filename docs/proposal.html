@@ -1,0 +1,148 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+  <style>
+    body {
+      padding: 100px;
+      width: 1000px;
+      margin: auto;
+      text-align: left;
+      font-weight: 300;
+      font-family: 'Open Sans', sans-serif;
+      color: #121212;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-family: 'Source Sans Pro', sans-serif;
+    }
+  </style>
+  <title>CS 184 Font Rendering</title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Source+Sans+Pro" rel="stylesheet">
+</head>
+
+<body>
+    <h1 align="middle">CS 184: Computer Graphics and Imaging, Spring 2022</h1>
+    <h1 align="middle">Final Project Proposal: Font Rendering</h1>
+    <h2 align="middle">Rui Wang, Zhuowen Chen, Yifan Zhong, Yicheng Sun</h2>
+
+    <br><br>
+
+    <div>
+        <h3 align="middle">
+            Summary
+        </h3>
+
+        <p>
+            We are going to build a Bezier curve rasterizer to render different TrueType .ttf or OpenType files. The output will be a .png file.
+        </p>
+    </div>
+
+    <div>
+        <h3 align="middle">
+            Problem Description
+        </h3>
+
+        <p>
+            <ol>
+                <li>
+                    We want to solve the problem of turning a .ttf file, and turning it into a .png image, with given or default texts.
+                </li>
+                <li>
+                    The <b>first</b> challenge we will be faced with is what is a TrueType font, what it is made of, and what elements inside it can be used to generate a Bezier curve, and 
+                    eventually be rasterized. We plan to solve this problem by surfing the Internet for more details about the .ttf files.And here we found a library called FreeType, which 
+                    can read in a TrueType file and give some primitives that we need.
+                </li>
+                <li>
+                    The <b>second</b> challenge is how we can rasterize a Bezier curve that we generated. We plan to solve this challenge by mixing the codes from Project 1 and 2.
+                </li>
+            </ol>
+        </p>
+    </div>
+
+    <div>
+        <h3 align="middle">
+            Goals and Deliverables
+        </h3>
+
+        <div align="middle">
+            <table style="width: 100%;">
+                <tr>
+                    <img src="img/goals_and_deliverables_1.png" style="height: 100%; width: 100%;">
+                </tr>
+            </table>
+        </div>
+        <p>
+            The above is the built-in font viewer in Windows. We want to be able to take in an input of a .ttf file, and turn it into a .png image, with the similar effect to the 
+            font viewer. That being said, we want to output an image with a line of text with different characters, and different font size. The rendered image will be in 
+            .png format.
+        </p>
+        <p>
+            We plan to also offer an interactive system so that we can change the character we show, the size of the rendered image, and so on. In the demo, we will show every single
+            feature of our interactive system.
+        </p>
+        <p>
+            We believe it is difficult to precisely evaluate the accuracy of font rendering. But we will try to compare between our rendered font and the results commercial font viwer
+            to measure our code. Also, we will try to make our rasterization faster, which can be precisely measured by counting the time we take to render.
+        </p>
+        <p>
+            If we successfully achieve our baseline of the project, we will try to create a GPU based text rendering system.
+        </p>
+    </div>
+
+    <div>
+        <h3 align="middle">
+            Schedule
+        </h3>
+
+        <p>
+            Our main task would be to take a .ttf file and render a .png file of this font.
+
+            <ul>
+                <li>
+                    <b>Task 1</b>: Load the .ttf file and convert it into a .svg file. We plan to use week 1 and part of week 2 to finish this task.
+                    <ul>
+                        <li>Subtask 1</li>: Read the .ttf file into memory. We'll find a data type to do this. It is very likely to be a vector.
+                        <li>Subtask 2</li>: Analyze the content read in the memory, extract out the information we need in order to construct Bezier curves we need to render the 
+                        font.
+                        <li>Subtask 3</li>: Use the information we got to write a .svg file. Most important elements would be the path tags.
+                    </ul>
+                </li>
+                <li>
+                    <b>Task 2</b>: Load the .svg file, construct the Bezier curves, and then render the png. We plan to use the rest of week 2 and week 3 to finish this task.
+                    <ul>
+                        <li>Subtask 1</li>: Load the .svg file. We can reference for the skeleton codes provided in project 1.
+                        <li>Subtask 2</li>: Use the Bezier parameters to construct the curves. Also we will need to rasterize the curves. We can reference our codes in project 1 and 
+                        2 fpr this subtask.
+                        <li>Subtask 3</li>: Render the png. We can also reference for the skeleton codes.
+                    </ul>
+                </li>
+                <li>
+                    <b>Task 3</b>: Finish the GUIs so that we can construct a vividly interactive system. In this task we can also reference the skeleton codes in different projects.
+                    We plan to finish this task in the last week.
+                </li>
+                <li>
+                    <b>Task 4</b>: Try to find small errors and debug. We plan to finish this task in the last week, after task 3.
+                </li>
+                <li>
+                    If we finish the above tasks before deadline to final presentation, we will try to add some features create a GPU based text rendering system.
+                </li>
+            </ul>
+        </p>
+    </div>
+
+    <div>
+        <h3 align="middle">
+            Resources
+        </h3>
+
+        <p>
+            <a href="https://freetype.org/freetype2/docs/tutorial/step1.html">https://freetype.org/freetype2/docs/tutorial/step1.html</a>
+        </p>
+    </div>
+
+</body>
