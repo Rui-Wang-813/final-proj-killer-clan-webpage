@@ -1,31 +1,47 @@
 <html>
+    <head>
+        <script>
+            function RedButton(_id) {
+                document.getElementById(_id).style.backgroundColor = 'red';
+                for (i = 0; i < 26; i++) {
+                    var chr = String.fromCharCode(65 + i);
+                    if (chr != _id) {
+                        document.getElementById(chr).style.backgroundColor = '';
+                    }
+                }
+            }
+            window.addEventListener('load', function() {
+                RedButton("A");
+            })
+        </script>
+    </head>
     <body>
-        <button onclick="document.getElementById('imageid').src='img/Debrosee-ALPnL_A.png'">A</button>
-        <button onclick="document.getElementById('imageid').src='img/Debrosee-ALPnL_B.png'">B</button>
-        <button onclick="document.getElementById('imageid').src='img/Debrosee-ALPnL_C.png'">C</button>
-        <button onclick="document.getElementById('imageid').src='img/Debrosee-ALPnL_D.png'">D</button>
-        <button onclick="document.getElementById('imageid').src='img/Debrosee-ALPnL_E.png'">E</button>
-        <button onclick="document.getElementById('imageid').src='img/Debrosee-ALPnL_F.png'">F</button>
-        <button onclick="document.getElementById('imageid').src='img/Debrosee-ALPnL_G.png'">G</button>
-        <button onclick="document.getElementById('imageid').src='img/Debrosee-ALPnL_H.png'">H</button>
-        <button onclick="document.getElementById('imageid').src='img/Debrosee-ALPnL_I.png'">I</button>
-        <button onclick="document.getElementById('imageid').src='img/Debrosee-ALPnL_J.png'">J</button>
-        <button onclick="document.getElementById('imageid').src='img/Debrosee-ALPnL_K.png'">K</button>
-        <button onclick="document.getElementById('imageid').src='img/Debrosee-ALPnL_L.png'">L</button>
-        <button onclick="document.getElementById('imageid').src='img/Debrosee-ALPnL_M.png'">M</button>
-        <button onclick="document.getElementById('imageid').src='img/Debrosee-ALPnL_N.png'">N</button>
-        <button onclick="document.getElementById('imageid').src='img/Debrosee-ALPnL_O.png'">O</button>
-        <button onclick="document.getElementById('imageid').src='img/Debrosee-ALPnL_P.png'">P</button>
-        <button onclick="document.getElementById('imageid').src='img/Debrosee-ALPnL_Q.png'">Q</button>
-        <button onclick="document.getElementById('imageid').src='img/Debrosee-ALPnL_R.png'">R</button>
-        <button onclick="document.getElementById('imageid').src='img/Debrosee-ALPnL_S.png'">S</button>
-        <button onclick="document.getElementById('imageid').src='img/Debrosee-ALPnL_T.png'">T</button>
-        <button onclick="document.getElementById('imageid').src='img/Debrosee-ALPnL_U.png'">U</button>
-        <button onclick="document.getElementById('imageid').src='img/Debrosee-ALPnL_V.png'">V</button>
-        <button onclick="document.getElementById('imageid').src='img/Debrosee-ALPnL_W.png'">W</button>
-        <button onclick="document.getElementById('imageid').src='img/Debrosee-ALPnL_X.png'">X</button>
-        <button onclick="document.getElementById('imageid').src='img/Debrosee-ALPnL_Y.png'">Y</button>
-        <button onclick="document.getElementById('imageid').src='img/Debrosee-ALPnL_Z.png'">Z</button>
+        <button id="A" onclick="document.getElementById('imageid').src='img/Debrosee-ALPnL_A.png'; RedButton(this.id)">A</button>
+        <button id="B" onclick="document.getElementById('imageid').src='img/Debrosee-ALPnL_B.png'; RedButton(this.id)">B</button>
+        <button id="C" onclick="document.getElementById('imageid').src='img/Debrosee-ALPnL_C.png'; RedButton(this.id)">C</button>
+        <button id="D" onclick="document.getElementById('imageid').src='img/Debrosee-ALPnL_D.png'; RedButton(this.id)">D</button>
+        <button id="E" onclick="document.getElementById('imageid').src='img/Debrosee-ALPnL_E.png'; RedButton(this.id)">E</button>
+        <button id="F" onclick="document.getElementById('imageid').src='img/Debrosee-ALPnL_F.png'; RedButton(this.id)">F</button>
+        <button id="G" onclick="document.getElementById('imageid').src='img/Debrosee-ALPnL_G.png'; RedButton(this.id)">G</button>
+        <button id="H" onclick="document.getElementById('imageid').src='img/Debrosee-ALPnL_H.png'; RedButton(this.id)">H</button>
+        <button id="I" onclick="document.getElementById('imageid').src='img/Debrosee-ALPnL_I.png'; RedButton(this.id)">I</button>
+        <button id="J" onclick="document.getElementById('imageid').src='img/Debrosee-ALPnL_J.png'; RedButton(this.id)">J</button>
+        <button id="K" onclick="document.getElementById('imageid').src='img/Debrosee-ALPnL_K.png'; RedButton(this.id)">K</button>
+        <button id="L" onclick="document.getElementById('imageid').src='img/Debrosee-ALPnL_L.png'; RedButton(this.id)">L</button>
+        <button id="M" onclick="document.getElementById('imageid').src='img/Debrosee-ALPnL_M.png'; RedButton(this.id)">M</button>
+        <button id="N" onclick="document.getElementById('imageid').src='img/Debrosee-ALPnL_N.png'; RedButton(this.id)">N</button>
+        <button id="O" onclick="document.getElementById('imageid').src='img/Debrosee-ALPnL_O.png'; RedButton(this.id)">O</button>
+        <button id="P" onclick="document.getElementById('imageid').src='img/Debrosee-ALPnL_P.png'; RedButton(this.id)">P</button>
+        <button id="Q" onclick="document.getElementById('imageid').src='img/Debrosee-ALPnL_Q.png'; RedButton(this.id)">Q</button>
+        <button id="R" onclick="document.getElementById('imageid').src='img/Debrosee-ALPnL_R.png'; RedButton(this.id)">R</button>
+        <button id="S" onclick="document.getElementById('imageid').src='img/Debrosee-ALPnL_S.png'; RedButton(this.id)">S</button>
+        <button id="T" onclick="document.getElementById('imageid').src='img/Debrosee-ALPnL_T.png'; RedButton(this.id)">T</button>
+        <button id="U" onclick="document.getElementById('imageid').src='img/Debrosee-ALPnL_U.png'; RedButton(this.id)">U</button>
+        <button id="V" onclick="document.getElementById('imageid').src='img/Debrosee-ALPnL_V.png'; RedButton(this.id)">V</button>
+        <button id="W" onclick="document.getElementById('imageid').src='img/Debrosee-ALPnL_W.png'; RedButton(this.id)">W</button>
+        <button id="X" onclick="document.getElementById('imageid').src='img/Debrosee-ALPnL_X.png'; RedButton(this.id)">X</button>
+        <button id="Y" onclick="document.getElementById('imageid').src='img/Debrosee-ALPnL_Y.png'; RedButton(this.id)">Y</button>
+        <button id="Z" onclick="document.getElementById('imageid').src='img/Debrosee-ALPnL_Z.png'; RedButton(this.id)">Z</button>
         <br>
 
         <img id="imageid" src='img/Debrosee-ALPnL_A.png' width="800px;">
